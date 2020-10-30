@@ -1,0 +1,64 @@
+.cartItems{
+  height: calc(100vh - 7rem);
+  overflow: auto;
+}
+.proceed{
+  background-color: sandybrown;
+  font-size: 1.6rem;
+  width: fit-content;
+  padding:.2rem 1rem;
+  color:white;
+  border-radius: .3rem;
+  margin: .2rem auto;
+}
+.total{
+display: flex;
+justify-content: space-around;
+background: wheat;
+padding: .2rem;
+}
+
+
+.cartCard{
+  display: flex;
+  justify-content: space-evenly  ;
+  height:fit-content;
+  align-items: center;
+  border: 1px solid sandybrown;
+  border-radius: .5rem;
+  flex: 1 1 100%;
+  margin: .3rem;
+  flex-wrap: wrap;
+  
+
+  &-img{
+    width: 6rem;
+    height: 6rem;
+    }
+    
+    
+  
+  &-NamePrice  {
+  width: 100% ;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: .2rem;
+  }
+  
+  &-content{
+    display:flex;
+    flex-direction: column; 
+    justify-content: center;
+    align-items: center
+  }
+  
+  &-name{
+  margin: .3rem;
+  font-size:1.6rem;
+  color: tan
+  }
+  
+  }
+  
+  

@@ -1,0 +1,30 @@
+.pagesTitle{
+  font-size:2rem;
+  padding: 2rem;
+  color: sandybrown
+}
+
+
+.mainPage{
+  height: calc(100vh - 2.5rem);
+  overflow: auto;
+  overflow-x: hidden;
+
+  &-Img{
+    height: 7rem;
+    width: 7rem;
+  }
+  &-Item{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+border: 1px solid sandybrown;
+align-items: center;
+padding: .2rem;
+margin: .5rem;
+flex-wrap: wrap;
+border-radius: .5rem;
+  }
+
+
+}

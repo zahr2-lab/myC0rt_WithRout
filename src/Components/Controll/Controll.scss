@@ -1,0 +1,33 @@
+.controll{
+  display: flex;
+  margin: 1rem;
+  font-size: 1.7rem;
+
+
+  &-add,
+  &-sub{
+    width: 2rem;
+    height: 2rem;
+    border: 1px solid sandybrown;
+    border-radius: 50%;
+    color: sandybrown;
+    line-height: 1.8rem;
+    text-align: center;
+  }
+  .hidden{
+    display: none;
+  }
+  &-btn{
+    width: 8rem;
+    height: 2rem;
+    background: sandybrown;
+    border-radius: .2rem;
+    color: white;
+  }
+  &-count{
+    width: 2rem;
+    height: 2rem;
+  }
+  }
+  
+  
