@@ -1,21 +1,22 @@
 .cartItems{
-  height: calc(100vh - 7rem);
+  height: calc(100vh - 11rem);
   overflow: auto;
 }
 .proceed{
   background-color: sandybrown;
   font-size: 1.6rem;
   width: fit-content;
-  padding:.2rem 1rem;
+  padding: .2rem 1rem;
   color:white;
   border-radius: .3rem;
-  margin: .2rem auto;
+  margin: 1rem auto;
 }
 .total{
 display: flex;
 justify-content: space-around;
 background: wheat;
-padding: .2rem;
+padding: .5rem;
+font-size: 1.4rem
 }
 
 
