@@ -23,7 +23,9 @@ export default function TopBar() {
       <div className="topBar-Cart">
         <Link to="/Cart">
           <span className="topBar-Cart-point">{quantity}</span>
-          <span>&#128722;</span>
+          <span role="img" aria-label="cart">
+            &#128722;
+          </span>
         </Link>
       </div>
     </div>
