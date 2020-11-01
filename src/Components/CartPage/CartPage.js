@@ -22,17 +22,18 @@ export default function CartPage() {
         cartList.map((items) => items.id).includes(obj.id)
       )
     );
-    cartList.length &&
-      setTotal(
-        cartList
-          .map(
-            (obj) =>
-              products
-                .filter((items) => items.id === obj.id)
-                .map((items) => items.price) * obj.quantity
-          )
-          .reduce((a, b) => a + b)
-      );
+    cartList.length
+      ? setTotal(
+          cartList
+            .map(
+              (obj) =>
+                products
+                  .filter((items) => items.id === obj.id)
+                  .map((items) => items.price) * obj.quantity
+            )
+            .reduce((a, b) => a + b)
+        )
+      : setTotal(0);
   }, [cartList, products]);
 
   return (

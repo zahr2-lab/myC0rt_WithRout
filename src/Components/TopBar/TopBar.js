@@ -11,7 +11,9 @@ export default function TopBar() {
   const [quantity, setQuantity] = useState(0);
 
   useEffect(() => {
-    cartList.length && setQuantity(cartList.map((obj) => obj.quantity).length);
+    cartList.length
+      ? setQuantity(cartList.map((obj) => obj.quantity).length)
+      : setQuantity(0);
   }, [cartList]);
   return (
     <div className="topBar">
