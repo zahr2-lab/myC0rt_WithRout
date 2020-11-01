@@ -3,6 +3,7 @@ import { atom, useRecoilValue } from "recoil";
 import CartCard from "./CartCard";
 import { productsState } from "../Page/Page";
 import "./CartCard.scss";
+import { Link } from "react-router-dom";
 
 export const cartListState = atom({
   key: "cartList",
@@ -16,31 +17,23 @@ export default function CartPage() {
   const [total, setTotal] = useState(0);
 
   useEffect(() => {
-    const selectedProducts = products.filter((obj) =>
-      cartList
-        .filter((items) => items.quantity !== 0)
-        .map((items) => items.id)
-        .includes(obj.id)
+    setCartProducts(
+      products.filter((obj) =>
+        cartList.map((items) => items.id).includes(obj.id)
+      )
     );
-
-    const sum = cartList.map(
-      (obj) =>
-        products
-          .filter((items) => items.id === obj.id)
-          .map((items) => items.price) * obj.quantity
-    );
-    var sumTotal;
-    if (sum.length > 0) {
-      sumTotal = sum.reduce((a, b) => a + b);
-    } else {
-      sumTotal = 0;
-    }
-    setTotal(sumTotal);
-    // const selectedwithoutRemove = products.filter((obj) =>
-    //   cartList.map((items) => items.id).includes(obj.id)
-    // );
-    setCartProducts(selectedProducts);
-  }, [cartList]);
+    cartList.length &&
+      setTotal(
+        cartList
+          .map(
+            (obj) =>
+              products
+                .filter((items) => items.id === obj.id)
+                .map((items) => items.price) * obj.quantity
+          )
+          .reduce((a, b) => a + b)
+      );
+  }, [cartList, products]);
 
   return (
     <div>
@@ -56,9 +49,9 @@ export default function CartPage() {
         <div>total: $ {total}</div>
       </div>
       {total > 0 && (
-        <div onClick={() => {}} className="proceed">
-          Proceed
-        </div>
+        <Link to="/Proceed">
+          <div className="proceed">Proceed</div>
+        </Link>
       )}
     </div>
   );

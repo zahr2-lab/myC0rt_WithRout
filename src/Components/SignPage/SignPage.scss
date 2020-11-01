@@ -1,0 +1,36 @@
+.signPage{
+
+height: 80vh;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+
+  &-insert{
+    font-size: 1.5rem;
+    margin: 1.5rem;
+    color: gray;
+    border: none;
+    border-bottom: 2px sandybrown solid;  
+  }
+  &-insert::placeholder{
+    color: lightgray;
+  }
+
+    &-title{
+font-size: 1.5rem;
+color: sandybrown;
+    }
+
+    &-button{
+      background: sandybrown;
+      border: none;
+      color: white;
+      font-size: 1.5rem;
+      padding: .2rem .8rem;
+      border-radius: .3rem;
+    }
+    
+    
+
+}

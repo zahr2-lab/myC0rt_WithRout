@@ -11,7 +11,9 @@
   padding: 0;
   box-sizing: border-box;
   text-decoration: unset;
-
+  outline:none;
+  -webkit-user-select: none;
+  -webkit-tap-highlight-color:transparent;
 }
 
 

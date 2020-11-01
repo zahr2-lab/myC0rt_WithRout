@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Products from "../ProductsList/ProductsList";
-import { atom, useSetRecoilState } from "recoil";
-import products from "../ProductsList/products";
+import { atom, useRecoilValue } from "recoil";
 import "./Page.scss";
 import { useParams } from "react-router-dom";
 
@@ -16,15 +15,14 @@ export const productsQuantityState = atom({
 });
 
 const Page = () => {
-  const setProductList = useSetRecoilState(productsState);
+  const productList = useRecoilValue(productsState);
   const [pageProducts, setPageProducts] = useState([]);
 
   let { page } = useParams();
 
   useEffect(() => {
-    setProductList(products);
-    setPageProducts(products.filter((obj) => obj.catagory === page));
-  }, [setPageProducts]);
+    setPageProducts(productList.filter((obj) => obj.catagory === page));
+  }, [productList, page]);
 
   return <Products pageProducts={pageProducts} />;
 };
